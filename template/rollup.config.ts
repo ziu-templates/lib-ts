@@ -9,14 +9,14 @@ import eslint from "@rollup/plugin-eslint";
 
 const pkg = require("./package.json");
 
-const libraryName = "index";
+const inputFileName = "index";
 
 export default {
-  input: `src/${libraryName}.ts`,
+  input: `src/${inputFileName}.ts`,
   output: [
     {
       file: pkg.main,
-      name: camelCase(libraryName),
+      name: camelCase(pkg.name),
       format: "umd",
       sourcemap: true,
       exports: "named",
