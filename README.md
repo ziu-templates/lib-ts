@@ -1,2 +1,3 @@
 # lib-ts
-使用typescript开发库的模板
+
+使用 typescript 开发库的模板
