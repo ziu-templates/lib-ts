@@ -14,7 +14,9 @@
     "build": "tsc --module commonjs && rollup -c rollup.config.ts",
     "prepublish": "npm run build",
     "commit": "git-cz --disable-emoji",
-    "prepare": "rimraf .husky && npm run husky",
+    "postinstall": "rimraf .husky && npm run husky",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
     "husky": "husky install && npm run commit-msg && npm run pre-push",
     "commit-msg": "husky add .husky/commit-msg \"npx --no-install commitlint --edit $1\"",
     "pre-push": "husky add .husky/pre-push \"npm run test\"",
@@ -33,6 +35,7 @@
   },
   "homepage": "",
   "devDependencies": {
+    "pinst": "^3.0.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-eslint": "^8.0.1",
     "@rollup/plugin-json": "^4.1.0",
