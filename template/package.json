@@ -15,7 +15,7 @@
     "build": "tsc --module commonjs && rollup -c rollup.config.ts",
     "prepublish": "npm run build",
     "commit": "git-cz --disable-emoji",
-    "postinstall": "rimraf .husky && npm run husky",
+    "prepare": "rimraf .husky && npm run husky",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
     "husky": "husky install && npm run commit-msg && npm run pre-push",
